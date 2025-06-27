@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Volume Estimation</title>
+</head>
+<body>
+    <h2>Estimate Traffic Volume</h2>
+    <form action="/predict" method="post">
+        Hour: <input type="number" name="hour" required><br>
+        Temperature (°C): <input type="number" name="temperature" step="0.1" required><br>
+        Rain (mm): <input type="number" name="rain" step="0.1" required><br>
+        Weather:
+        <select name="weather">
+            <option value="Clear">Clear</option>
+            <option value="Cloudy">Cloudy</option>
+            <option value="Rain">Rain</option>
+            <option value="Fog">Fog</option>
+            <option value="Snow">Snow</option>
+        </select><br>
+        Day of Week:
+        <select name="day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
